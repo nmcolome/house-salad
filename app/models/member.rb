@@ -11,7 +11,7 @@ class Member
   end
 
   def self.get_house_members_from(state)
-    members = PropublicaService.get_house_members_from(state)
+    members = PropublicaService.new(state).get_house_members
     member_list = members.map do |member|
       new(member)
     end
