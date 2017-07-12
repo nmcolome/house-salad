@@ -11,10 +11,8 @@ class Member
   end
 
   def self.get_house_members_from(state)
-    conn = Faraday.new("https://api.propublica.org")
-    response = conn.get "/congress/v1/members/house/#{state}/current.json", {}, {"X-API-Key" => ENV['PROPUBLICA_API_KEY']}
-    json_response = JSON.parse(response.body, serialize_name: true)
-    member_list = json_response["results"].map do |member|
+    members = PropublicaService.get_house_members_from(state)
+    member_list = members.map do |member|
       new(member)
     end
   end
