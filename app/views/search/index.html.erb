@@ -1,0 +1,10 @@
+<%= @members.count %> Results
+<% @members.each do |member| %>
+  <div class='member'>
+    <p class='name'>Name: <%= member["name"] %></p>
+    <p class='role'>Role: <%= member["role"] %></p>
+    <p class='party'>Party: <%= member["party"] %></p>
+    <p class='district'>District: <%= member["district"] %></p>
+    <p class='seniority'>Seniority: <%= member["seniority"] %></p>
+  </div>
+<% end %>

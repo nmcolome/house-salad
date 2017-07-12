@@ -7,7 +7,7 @@ RSpec.describe :search do
     click_on 'Locate Members of the House'
 
     expect(current_path).to eq('/search')
-    expect(page).to have_content('7 Results')
+    expect(page).to have_content("7 Results")
     expect(page).to have_selector('.member', count: 7)
 
     within first('.member') do
