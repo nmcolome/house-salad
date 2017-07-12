@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Search do
+RSpec.describe :search do
   it "locates all congress members by state" do
     visit '/'
     select 'Colorado', from: 'state'
