@@ -15,6 +15,7 @@ class Member
     member_list = members.map do |member|
       new(member)
     end
+    member_list.sort_by { |member| -member.seniority.to_i }
   end
 
   private
